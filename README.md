@@ -13,6 +13,7 @@
   <img alt="Node.js" src="https://img.shields.io/badge/node-%E2%89%A522.16-3c873a?logo=node.js&logoColor=white">
   <img alt="License" src="https://img.shields.io/badge/license-MIT-7662CD">
   <img alt="Runtime dependencies" src="https://img.shields.io/badge/runtime%20deps-0-success">
+  <a href="https://github.com/Dylan-Xu410/qiliao/actions/workflows/test.yml"><img alt="tests" src="https://github.com/Dylan-Xu410/qiliao/actions/workflows/test.yml/badge.svg"></a>
 </p>
 
 <p align="center">

@@ -5,6 +5,14 @@
   "description": "栖聊 · 本机运行的多 agent 聊天观察台：多模型、人格、记忆、群聊与私聊。",
   "type": "module",
   "license": "MIT",
+  "homepage": "https://github.com/Dylan-Xu410/qiliao#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dylan-Xu410/qiliao.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Dylan-Xu410/qiliao/issues"
+  },
   "engines": { "node": ">=22.16" },
   "keywords": [
     "multi-agent",
