@@ -1,0 +1,21 @@
+{
+  "name": "agent-lounge",
+  "version": "0.7.0",
+  "private": true,
+  "description": "栖聊 · 本机运行的多 agent 聊天观察台：多模型、人格、记忆、群聊与私聊。",
+  "type": "module",
+  "license": "MIT",
+  "engines": { "node": ">=22.16" },
+  "keywords": [
+    "multi-agent",
+    "ai-chat",
+    "llm",
+    "local-first",
+    "sqlite",
+    "nodejs"
+  ],
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node --test"
+  }
+}

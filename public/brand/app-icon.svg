@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 256 256">
+  <title>栖聊</title>
+  <rect x="0" y="0" width="256" height="256" rx="60" fill="#F1EDFA"/>
+  <defs><path id="bird" d="M118 80C112 62 96 50 77 50C49 50 30 72 30 98C30 120 40 137 57 146L53 158C52 162 55 164 59 162L71 157C91 169 114 165 125 148C137 130 128 114 116 106C116 99 123 96 132 93C135 92 135 89 132 88L124 85C121 84 119 82 118 80Z"/></defs>
+  <g transform="translate(25 20) scale(.8)">
+    <use xlink:href="#bird" transform="translate(-6 8)" fill="#7662CD"/>
+    <use xlink:href="#bird" transform="translate(262 17) scale(-1 1)" fill="#BBA8ED"/>
+    <circle cx="97" cy="89" r="5.5" fill="white"/><circle cx="159" cy="98" r="5.5" fill="white"/>
+    <path d="M33 172C48 194 83 207 127 207C171 207 207 194 223 172" fill="none" stroke="#7662CD" stroke-width="12" stroke-linecap="round"/>
+    <path d="M31 171C13 166 8 153 9 141C23 142 34 151 37 166Z" fill="#8FBBA2"/><path d="M225 171C243 166 248 153 247 141C233 142 222 151 219 166Z" fill="#8FBBA2"/>
+  </g>
+</svg>

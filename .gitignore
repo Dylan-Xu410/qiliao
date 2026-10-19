@@ -1,0 +1,44 @@
+# ---------------------------------------------------------------------------
+# Local runtime data — never commit chats, personas, media or statistics
+# ---------------------------------------------------------------------------
+/data/
+/work/
+/备份/
+/交接与说明/
+/HANDOFF.md
+/VALIDATION.md
+/先看这里.md
+/复制校验.json
+
+# SQLite / workspace snapshots if they ever appear outside data/
+/*.sqlite
+/*.sqlite-wal
+/*.sqlite-shm
+/workspace.json
+/workspace.before-sqlite.json
+/restore-point.json
+/restore-journal.json
+/agents.json
+/providers.json
+*.log
+
+# ---------------------------------------------------------------------------
+# Secrets
+# ---------------------------------------------------------------------------
+.env
+.env.*
+*.key
+*.pem
+secrets*.json
+
+# ---------------------------------------------------------------------------
+# Tooling / OS
+# ---------------------------------------------------------------------------
+node_modules/
+npm-debug.log*
+.pnpm-store/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini

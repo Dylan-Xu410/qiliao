@@ -1,0 +1,2 @@
+const n=v=>typeof v==='number'&&Number.isFinite(v)?v.toLocaleString():'未回传';
+export function usageText(usage){if(!usage)return '用量未回传';return `输入 ${n(usage.inputTokens)} · 输出 ${n(usage.outputTokens)} · 缓存命中 ${n(usage.cachedInputTokens)}${typeof usage.cacheWriteTokens==='number'?' · 缓存写入 '+n(usage.cacheWriteTokens):''}${typeof usage.reasoningTokens==='number'?' · 推理 '+n(usage.reasoningTokens):''} · 共 ${n(usage.totalTokens)} tokens`;}

@@ -1,0 +1,159 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "listening": {
+      "type": "boolean"
+    },
+    "message": {
+      "type": "string"
+    },
+    "profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "signature": {
+          "type": "string"
+        },
+        "avatar": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "online",
+            "away",
+            "busy"
+          ]
+        }
+      },
+      "required": [
+        "name",
+        "signature",
+        "avatar",
+        "status"
+      ]
+    },
+    "memories": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "subject": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          },
+          "topic": {
+            "type": "string"
+          },
+          "basis": {
+            "type": "string",
+            "enum": [
+              "self",
+              "explicit",
+              "inference"
+            ]
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "replaces": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "reason": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "subject",
+          "text",
+          "topic",
+          "basis",
+          "evidence",
+          "replaces",
+          "reason"
+        ]
+      }
+    },
+    "forget": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "soul": {
+      "type": "string"
+    },
+    "soulReason": {
+      "type": "string"
+    },
+    "soulEdits": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "old": {
+            "type": "string"
+          },
+          "new": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "old",
+          "new"
+        ]
+      }
+    },
+    "tool": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "none",
+            "search",
+            "read",
+            "avatar_search"
+          ]
+        },
+        "query": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "query",
+        "url"
+      ]
+    }
+  },
+  "required": [
+    "message",
+    "listening",
+    "profile",
+    "memories",
+    "forget",
+    "soul",
+    "soulReason",
+    "soulEdits",
+    "tool"
+  ]
+}

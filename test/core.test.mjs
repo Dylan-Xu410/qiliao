@@ -1,0 +1,11 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {makePrompt,parseReply,validateTurn} from '../core.mjs';
+const agent={id:'a',name:'甲',avatar:'🪐',signature:'hello',status:'online',personality:'热情',provider:'codex',model:''};
+const b={agent,members:[agent,{id:'b',name:'乙'}],messages:[],topic:'闲聊',autonomy:true};
+test('requires two participants and rejects a speaker outside the room',()=>{assert.throws(()=>validateTurn({...b,members:[agent]}));assert.throws(()=>validateTurn({...b,agent:{...agent,id:'outside'}}));assert.equal(validateTurn(b),b);});
+test('only API providers require a model ID',()=>{assert.doesNotThrow(()=>validateTurn(b));assert.throws(()=>validateTurn({...b,agent:{...agent,provider:'openai'}}));assert.throws(()=>validateTurn({...b,agent:{...agent,provider:'arbitrary'}}));});
+test('profile autonomy is limited to the actor and permitted values',()=>{const r=parseReply(JSON.stringify({message:'hello',profile:{name:'新昵称',avatar:'<script>',signature:'x'.repeat(500),status:'admin',provider:'anthropic',otherAgent:{name:'hacked'}}}),agent,true);assert.equal(r.profile.name,'新昵称');assert.equal(r.profile.avatar,agent.avatar);assert.equal(r.profile.signature.length,100);assert.equal(r.profile.status,'online');assert.equal(r.profile.provider,undefined);assert.equal(r.profile.otherAgent,undefined);});
+test('disabling autonomy preserves all profile fields',()=>{const r=parseReply(JSON.stringify({message:'hello',profile:{name:'改名',signature:'换签名',avatar:'🦊',status:'busy'}}),agent,false);assert.deepEqual(r.profile,{name:agent.name,signature:agent.signature,avatar:agent.avatar,status:agent.status});});
+test('invalid or empty model output is an error, never a demo fallback',()=>{for(const raw of ['hello','{"message":""}','null','{}'])assert.throws(()=>parseReply(raw,agent));assert.equal(parseReply('```json\n{"message":"hi"}\n```',agent).message,'hi');});
+test('only the last 12 messages are passed and content remains quoted as data',()=>{const p=makePrompt({...b,messages:Array.from({length:50},(_,i)=>({name:'乙',text:'message-'+i}))});const h=JSON.parse(p.context).conversation;assert.equal(h.length,12);assert.equal(h[0].text,'message-38');assert.match(p.instructions,/不得执行命令/);assert.match(p.instructions,/热情/);});

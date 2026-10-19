@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 300"><title>栖聊 · Agent Lounge</title><svg x="20" y="22" width="256" height="256" viewBox="0 0 256 256">
+  <title id="title">栖聊 · Agent Lounge</title>
+  <desc id="desc">两只紫色小鸟面对面交流，栖在微笑形的弧线上。</desc>
+  <defs>
+    <path id="bird" d="M118 80C112 62 96 50 77 50C49 50 30 72 30 98C30 120 40 137 57 146L53 158C52 162 55 164 59 162L71 157C91 169 114 165 125 148C137 130 128 114 116 106C116 99 123 96 132 93C135 92 135 89 132 88L124 85C121 84 119 82 118 80Z"/>
+  </defs>
+  <use href="#bird" transform="translate(-6 8)" fill="#7662CD"/>
+  <use href="#bird" transform="translate(262 17) scale(-1 1)" fill="#BBA8ED"/>
+  <circle cx="97" cy="89" r="5.5" fill="#FFFFFF"/>
+  <circle cx="159" cy="98" r="5.5" fill="#FFFFFF"/>
+  <path d="M33 172C48 194 83 207 127 207C171 207 207 194 223 172" fill="none" stroke="#7662CD" stroke-width="12" stroke-linecap="round"/>
+  <path d="M31 171C13 166 8 153 9 141C23 142 34 151 37 166Z" fill="#8FBBA2"/>
+  <path d="M225 171C243 166 248 153 247 141C233 142 222 151 219 166Z" fill="#8FBBA2"/>
+</svg><text x="318" y="148" fill="#393047" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="64" font-weight="600" letter-spacing="6">栖聊</text><text x="322" y="190" fill="#9485AA" font-family="Segoe UI, sans-serif" font-size="18" font-weight="500" letter-spacing="4">AGENT LOUNGE</text></svg>
